@@ -196,7 +196,7 @@ def getAddress(address):
             user4 = user3
             # 如果乡没有被找到的话
             # print(user4)
-        answerPart2.detail = user4
+        answerPart2.detail = user4[:user4.index('.')]
 
     return answerPart2
 
