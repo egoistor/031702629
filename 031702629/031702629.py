@@ -75,6 +75,8 @@ def getPhoneNumber(s):
     return phone
 
 def cutSame(s1,s2):
+    if s2=="":
+        return s1
     if len(s1) < len(s2):
         leng = len(s1)
     else:
