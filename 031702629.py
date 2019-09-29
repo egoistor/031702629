@@ -225,4 +225,4 @@ def main():
 
             getOut(answerPart1,answerPart2)#输出
 
-main()
+main(userString)
