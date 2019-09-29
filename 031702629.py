@@ -75,6 +75,8 @@ def getPhoneNumber(s):
     return phone
 
 def cutSame(s1,s2):
+    if s2=="":
+        return s1
     if len(s1) < len(s2):
         leng = len(s1)
     else:
@@ -204,19 +206,23 @@ def getAddress(address):
 
 
 def main():
+    while 1:
     #准备工作
-    userString = getIn()#输入
+        userString = getIn()#输入
 
-    answerPart1=AnswerPart1()
+        if(userString=="END"):
+                break
+        else:
+            answerPart1=AnswerPart1()
 
-    answerPart1=getBasisMessage(userString)
+            answerPart1=getBasisMessage(userString)
 
-    address=userString[userString.index(','):].replace('!',' ').replace(',','').replace(getPhoneNumber(userString),'')
+            address=userString[userString.index(','):].replace('!',' ').replace(',','').replace(getPhoneNumber(userString),'')
     #开始处理地址
-    answerPart2=AnswerPart2()
+            answerPart2=AnswerPart2()
 
-    answerPart2=getAddress(address)
+            answerPart2=getAddress(address)
 
-    getOut(answerPart1,answerPart2)#输出
+            getOut(answerPart1,answerPart2)#输出
 
 main()
