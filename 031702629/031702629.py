@@ -19,9 +19,6 @@ class AnswerPart2:
     number = ""
     preciseAddress = ""
 
-def getIn():
-    str = input()
-    return str
 
 def getOut(ap1,ap2):#关键字杀我，output不能用，我没得起名了
 
@@ -204,15 +201,13 @@ def getAddress(address):
 
 
 
+def main(userString):
+    #while 1:  # 循环直到读到END
+       # s = input();  # 读入input到inputraw
+       # if (s == "END"):  # 如果inputraw等于END退出while的循环
+         #   break
+       # main(s)  # 将s（输入）作为参数传入main函数
 
-def main():
-    while 1:
-    #准备工作
-        userString = getIn()#输入
-
-        if(userString=="END"):
-                break
-        else:
             answerPart1=AnswerPart1()
 
             answerPart1=getBasisMessage(userString)
@@ -225,4 +220,18 @@ def main():
 
             getOut(answerPart1,answerPart2)#输出
 
-main(userString)
+
+while 1:#循环直到读到END
+
+    try:#尝试 然后捕获异常
+
+        inputraw=input();#读入input到inputraw
+
+        if(inputraw=="END"):#如果inputraw等于END退出while的循环
+            break
+
+        main(inputraw)#将inputraw（输入）作为参数传入main函数
+
+    except EOFError:#如果有eoferror异常退出循环
+        
+        break
